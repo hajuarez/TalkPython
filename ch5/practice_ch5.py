@@ -2,9 +2,27 @@
 # Remember that you can check if a number is even or odd using the modulus operator, like this:
 
 
-number = int(input("Enter a number: "))
+number = int(input("Enter a number, 0 to exit the program: "))
 
-if number % 2 == 0:
-    print("Even")
-else:    
-    print("Odd")
+while number != 0:
+    if number % 2 == 0:
+        print("Even")
+    else:    
+        print("Odd")
+    number = int(input("Enter a number: "))
+
+print("Goodbye!")
+
+
+#Copilot version
+# while True:
+#     number = int(input("Enter a number, 0 to exit the program: "))
+    
+#     if number == 0:
+#         print("Goodbye!")
+#         break
+    
+#     if number % 2 == 0:
+#         print("Even")
+#     else:
+#         print("Odd")
