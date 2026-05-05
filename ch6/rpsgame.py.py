@@ -1,9 +1,11 @@
+import random
+
 print("--------------------------------")
 print("Rock Paper Scissors v1")
 print("--------------------------------")
 
-player_1 = input("Enter player 1's name: ")
-player_2 = input("Enter player 2's name: ")
+player_1 = "You"
+player_2 = "Computer"
 
 rolls = ["rock", "paper", "scissors"]
 
@@ -12,11 +14,7 @@ roll1 = roll1.lower().strip() # Convert to lowercase to make it case-insensitive
 if roll1 not in rolls:
     print(f"Sorry {player_1}, {roll1} is not a valid play!")
 
-roll2 = input(f"{player_2}, enter your roll [rock, paper, scissors]: ")
-roll2 = roll2.lower().strip() # Convert to lowercase to make it case-insensitive
-if roll2 not in rolls:
-    print(f"Sorry {player_2}, {roll2} is not a valid play!")
-
+roll2 = random.choice(rolls)
 
 print(f"{player_1} rolls {roll1}")
 print(f"{player_2} rolls {roll2}")
@@ -49,3 +47,11 @@ elif roll1 == "paper":
         print(f"{player_1} wins!")
     else:
         print(f"{player_2} wins!")
+elif roll1 == "scissors":
+    if roll2 == "paper":
+        print(f"{player_1} wins!")
+    else:
+        print(f"{player_2} wins!")
+
+
+
