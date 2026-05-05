@@ -14,6 +14,7 @@ roll1 = roll1.lower().strip() # Convert to lowercase to make it case-insensitive
 if roll1 not in rolls:
     print(f"Sorry {player_1}, {roll1} is not a valid play!")
 
+#2nd player automated, no need to validate input
 roll2 = random.choice(rolls)
 
 print(f"{player_1} rolls {roll1}")
