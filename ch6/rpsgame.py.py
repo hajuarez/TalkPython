@@ -16,13 +16,12 @@ def show_header():
 def play_game(player_1, player_2):
     rolls = ["rock", "paper", "scissors"]
 
-    roll1 = input(f"{player_1}, enter your roll [rock, paper, scissors]: ")
-    roll1 = roll1.lower().strip() # Convert to lowercase to make it case-insensitive
-    if roll1 not in rolls:
-        print(f"Sorry {player_1}, {roll1} is not a valid play!")
+    roll1 = get_roll(player_1, rolls)
+    roll2 = random.choice(rolls)                #2nd player automated, no need to validate input
 
-    #2nd player automated, no need to validate input
-    roll2 = random.choice(rolls)
+    if roll1 is None:
+        print("Can't play that, exiting!")
+        return
 
     print(f"{player_1} rolls {roll1}")
     print(f"{player_2} rolls {roll2}")
@@ -61,4 +60,14 @@ def play_game(player_1, player_2):
         else:
             print(f"{player_2} wins!")
 
-main()
+def get_roll(player_name, rolls):
+    roll = input(f"{player_name}, enter your roll [rock, paper, scissors]: ")
+    roll = roll.lower().strip() # Convert to lowercase to make it case-insensitive
+    if roll not in rolls:
+        print(f"Sorry {player_name}, {roll} is not a valid play!")
+        return None
+
+    return roll
+
+if __name__ == "__main__":
+    main()
